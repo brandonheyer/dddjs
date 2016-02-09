@@ -7,4 +7,4 @@
 
 ```
 
-_A d3.js charting library_
+__An ES6 d3.js charting library__
