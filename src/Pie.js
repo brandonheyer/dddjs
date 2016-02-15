@@ -16,7 +16,6 @@ export default class extends Chart {
         this._initializeArc();
 
         this._pie = d3.layout.pie();
-        this._colors = d3.scale.category10();
     }
 
     render () {
@@ -45,9 +44,5 @@ export default class extends Chart {
 
     get radius () {
         return ( Math.min( this.width, this.height ) - this.padding ) / 2;
-    }
-
-    get padding () {
-        return 10;
     }
 }

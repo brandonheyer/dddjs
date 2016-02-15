@@ -15,6 +15,7 @@ export default class {
         this.selector = selector;
         this._width = options.width || this.width;
         this._height = options.height || this.height;
+        this._colors = options.colors || d3.scale.category10();
     }
 
     render () {
@@ -36,5 +37,13 @@ export default class {
 
     get width () {
         return this._width || 300;
+    }
+
+    get colors () {
+        return this._colors;
+    }
+
+    get padding () {
+        return 10;
     }
 }
