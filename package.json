@@ -1,8 +1,8 @@
 {
-  "name": "dddjs",
+  "name": "ddd",
   "version": "0.1.0",
   "description": "A d3 charting library",
-  "main": "src/index.js",
+  "main": "ddd.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -24,5 +24,27 @@
   "homepage": "https://github.com/brandonheyer/dddjs#readme",
   "dependencies": {
     "d3": "^3.5.14"
+  },
+  "devDependencies": {
+    "babel-preset-es2015": "^6.5.0",
+    "babelify": "^7.2.0",
+    "browserify": "^13.0.0",
+    "browserify-shim": "^3.8.12",
+    "grunt": "^0.4.5",
+    "grunt-browserify": "^4.0.1",
+    "grunt-cli": "^0.1.13",
+    "grunt-contrib-watch": "^0.6.1",
+    "grunt-notify": "^0.4.3"
+  },
+  "browser": {
+      "d3": "./node_modules/d3/d3.js"
+  },
+  "browserify-shim": {
+    "d3": "d3"
+  },
+  "browserify": {
+    "transform": [
+      "browserify-shim"
+    ]
   }
 }
