@@ -31,7 +31,7 @@ export default class extends Chart {
 
         this._arcGroups = this._mainGroup
             .selectAll( '.arc' )
-                .data( this._pie( this._data ) )
+                .data( this._pie( this._data.series( 0 )._data ) )
             .enter()
                 .append( 'g' )
                     .attr( 'class', 'arc' );

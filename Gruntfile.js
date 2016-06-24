@@ -2,13 +2,22 @@ module.exports = function( grunt ) {
     grunt.initConfig( {
         pkg: grunt.file.readJSON( 'package.json' ),
         browserify: {
+            lib: {
+                src: [],
+                dest: 'demo/lib.js',
+                options: {
+                    require: [ 'underscore', 'd3' ]
+                }
+            },
+
             demo: {
                 files: {
                     'demo/demo.js': [ 'demo/index.js' ]
                 },
                 options: {
                     browserifyOptions: {
-                        debug: true
+                        debug: true,
+                        bundleExternal: false
                     },
                     transform: [ [ 'babelify', { presets: [ 'es2015' ] } ] ]
                 }
@@ -30,7 +39,7 @@ module.exports = function( grunt ) {
 
         watch: {
             demo: {
-                files: [ 'src/**/*.js', 'demo/**/*.js' ],
+                files: [ 'src/**/*.js', 'demo/index.js' ],
                 tasks: [ 'browserify:demo', 'notify:demo' ]
             },
 
@@ -62,5 +71,5 @@ module.exports = function( grunt ) {
     grunt.loadNpmTasks( 'grunt-notify' );
 
     grunt.registerTask( 'default', [ 'browserify:build', 'watch:build' ] );
-    grunt.registerTask( 'demo', [ 'browserify:demo', 'watch:demo' ] );
+    grunt.registerTask( 'demo', [ 'browserify:demo', 'browserify:lib', 'watch:demo' ] );
 };

@@ -23,7 +23,8 @@
   },
   "homepage": "https://github.com/brandonheyer/dddjs#readme",
   "dependencies": {
-    "d3": "^3.5.14"
+    "d3": "^3.5.14",
+    "underscore": "^1.8.3"
   },
   "devDependencies": {
     "babel-preset-es2015": "^6.5.0",
@@ -37,7 +38,7 @@
     "grunt-notify": "^0.4.3"
   },
   "browser": {
-      "d3": "./node_modules/d3/d3.js"
+    "d3": "./node_modules/d3/d3.js"
   },
   "browserify-shim": {
     "d3": "d3"

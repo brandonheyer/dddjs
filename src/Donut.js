@@ -1,3 +1,5 @@
+import d3 from 'd3';
+
 import Pie from './Pie';
 
 export default class extends Pie {
